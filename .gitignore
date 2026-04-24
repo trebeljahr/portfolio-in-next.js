@@ -25,3 +25,6 @@ createDifferentImageSizes.js
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+# claude code
+.claude/settings.local.json
+.claude/worktrees/
