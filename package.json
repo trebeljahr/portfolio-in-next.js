@@ -2,6 +2,7 @@
   "name": "portfolio-page",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@10.33.2",
   "dependencies": {
     "@material-ui/core": "latest",
     "@material-ui/icons": "latest",
