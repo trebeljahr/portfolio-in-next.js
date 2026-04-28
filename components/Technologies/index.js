@@ -1,15 +1,14 @@
-import _JSXStyle from "styled-jsx/style";
 import Paper from "@material-ui/core/Paper";
-import PropTypes from "prop-types";
-import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
+import PropTypes from "prop-types";
+
 const styles = {
   white: {
     width: "80%",
     margin: 10,
     padding: 20,
-    textAlign: "center"
-  }
+    textAlign: "center",
+  },
 };
 const Technologies = ({ classes }) => (
   <Paper className={classes.white}>
@@ -142,7 +141,7 @@ const Technologies = ({ classes }) => (
   </Paper>
 );
 Technologies.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(Technologies);

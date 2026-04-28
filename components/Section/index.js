@@ -1,26 +1,21 @@
-import React, { Component } from "react";
-import _JSXStyle from "styled-jsx/style";
 import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
+import { createMuiTheme, MuiThemeProvider, withStyles } from "@material-ui/core/styles";
 import Link from "next/link";
-
 import PropTypes from "prop-types";
-import classNames from "classnames";
-import { withStyles } from "@material-ui/core/styles";
-import { createMuiTheme } from "@material-ui/core/styles";
-import { MuiThemeProvider } from "@material-ui/core/styles";
+import React from "react";
 
 export const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#f9dc5c"
-    }
+      main: "#f9dc5c",
+    },
   },
   typography: {
-    useNextVariants: true
-  }
+    useNextVariants: true,
+  },
 });
-const getImagePath = w => {
+const getImagePath = (w) => {
   if (w >= 2400) {
     return "images";
   }
@@ -32,12 +27,11 @@ const getImagePath = w => {
 const styles = {
   button: {
     marginTop: "40px",
-    padding: "0 40px",
     textDecoration: "none",
     color: "black",
     display: "relative",
     zIndex: 2,
-    padding: "10px 20px"
+    padding: "10px 20px",
   },
   white: {
     display: "flex",
@@ -47,7 +41,7 @@ const styles = {
     background: "white",
     padding: "1em 10em",
     flexWrap: "wrap",
-    minWidth: "20vw"
+    minWidth: "20vw",
 
     /*-webkit-box-shadow: 10px 10px 72px 1px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 72px 1px rgba(0,0,0,0.75);
@@ -56,8 +50,8 @@ const styles = {
   dash: {
     display: "flex",
     flexDirection: "row",
-    alignItems: "center"
-  }
+    alignItems: "center",
+  },
 };
 class Section extends React.Component {
   constructor(props) {
@@ -66,14 +60,14 @@ class Section extends React.Component {
       w: 0,
       h: 0,
       resizeTaskId: null,
-      size: "sizes/1600"
+      size: "sizes/1600",
     };
   }
   componentDidMount = () => {
     this.setState({
       w: window.innerWidth,
       h: window.innerHeight,
-      size: getImagePath(window.innerWidth)
+      size: getImagePath(window.innerWidth),
     });
 
     window.addEventListener("resize", () => {
@@ -83,7 +77,7 @@ class Section extends React.Component {
       this.setState({
         resizeTaskId: setTimeout(() => {
           this.resize();
-        }, 100)
+        }, 100),
       });
     });
   };
@@ -96,12 +90,12 @@ class Section extends React.Component {
       w: window.innerWidth,
       h: window.innerHeight,
       resizeTaskId: null,
-      size: getImagePath(window.innerWidth)
+      size: getImagePath(window.innerWidth),
     });
   };
   render() {
-    let size = this.state.size;
-    let classes = this.props.classes;
+    const size = this.state.size;
+    const classes = this.props.classes;
     return (
       <div>
         <div className="absolute">
@@ -114,11 +108,7 @@ class Section extends React.Component {
           <MuiThemeProvider theme={theme}>
             <Link href={this.props.href}>
               <Button
-                href={
-                  this.props.href === "https://photodyssee.com"
-                    ? this.props.href
-                    : ""
-                }
+                href={this.props.href === "https://photodyssee.com" ? this.props.href : ""}
                 variant="contained"
                 color="primary"
                 className={classes.button}
@@ -128,7 +118,7 @@ class Section extends React.Component {
             </Link>
           </MuiThemeProvider>
         </div>
-        {this.props.images.map(image => (
+        {this.props.images.map((image) => (
           <div
             className={"img " + (image === this.props.img ? "on" : "off")}
             id={image.slice(0, -4)}
@@ -240,7 +230,7 @@ class Section extends React.Component {
   }
 }
 Section.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(Section);

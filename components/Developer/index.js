@@ -1,10 +1,8 @@
-import PropTypes from "prop-types";
-import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
-import Projects from "../Projects";
+import PropTypes from "prop-types";
 import AboutMe from "../AboutMe";
+import Projects from "../Projects";
 import Technologies from "../Technologies";
-import _JSXStyle from "styled-jsx/style";
 
 const styles = {
   outer: {
@@ -13,7 +11,7 @@ const styles = {
     width: "100vw",
     background: "rgb(51, 51, 51)",
     display: "flex",
-    justifyContent: "center"
+    justifyContent: "center",
   },
   wrapper: {
     borderRadius: "0 0 30px 30px",
@@ -28,11 +26,11 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     opacity: 1,
-    paddingBottom: "10%"
-  }
+    paddingBottom: "10%",
+  },
 };
 
-const Developer = props => {
+const Developer = (props) => {
   const { classes } = props;
 
   return (
@@ -47,7 +45,7 @@ const Developer = props => {
 };
 
 Developer.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(Developer);

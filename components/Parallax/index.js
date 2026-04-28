@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import _JSXStyle from "styled-jsx/style";
+import React from "react";
 
 class Parallax extends React.Component {
   constructor(props) {
@@ -7,13 +6,13 @@ class Parallax extends React.Component {
     this.state = {
       w: 0,
       h: 0,
-      resizeTaskId: null
+      resizeTaskId: null,
     };
   }
   componentDidMount = () => {
     this.setState({
       w: window.innerWidth,
-      h: window.innerHeight
+      h: window.innerHeight,
     });
 
     window.addEventListener("resize", () => {
@@ -21,7 +20,7 @@ class Parallax extends React.Component {
         clearTimeout(this.state.resizeTaskId);
       }
       this.setState({
-        resizeTaskId: setTimeout(this.resize, 1000)
+        resizeTaskId: setTimeout(this.resize, 1000),
       });
     });
   };
@@ -33,7 +32,7 @@ class Parallax extends React.Component {
     this.setState({
       w: window.innerWidth,
       h: window.innerHeight,
-      resizeTaskId: null
+      resizeTaskId: null,
     });
   };
   render() {

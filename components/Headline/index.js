@@ -1,5 +1,3 @@
-import _JSXStyle from "styled-jsx/style";
-
 const Headline = ({ text, secondText, parallax }) => (
   <div className={"container " + (parallax ? "absolute" : "top-margin")}>
     <div>

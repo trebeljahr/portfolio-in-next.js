@@ -1,7 +1,3 @@
 {
-  "recommendations": [
-    "biomejs.biome",
-    "dbaeumer.vscode-eslint",
-    "eamodio.gitlens"
-  ]
+  "recommendations": ["biomejs.biome", "dbaeumer.vscode-eslint", "eamodio.gitlens"]
 }

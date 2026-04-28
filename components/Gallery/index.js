@@ -1,9 +1,8 @@
-import React, { component } from "react";
-import Social from "../Social";
+import React from "react";
 import Menu from "../Menu";
-import _JSXStyle from "styled-jsx/style";
+import Social from "../Social";
 
-const getImagePath = w => {
+const getImagePath = (w) => {
   if (w >= 2400) {
     return "gallery";
   }
@@ -18,7 +17,7 @@ const getImagePath = w => {
   }
   return "sizes/400";
 };
-const getGalleryPath = w => {
+const getGalleryPath = (w) => {
   if (w >= 800) {
     return "sizes/800";
   }
@@ -33,7 +32,7 @@ export default class Gallery extends React.Component {
       galleryPath: "sizes/400",
       extend: false,
       index: 0,
-      resizeTaskId: null
+      resizeTaskId: null,
     };
   }
   componentDidMount = () => {
@@ -45,7 +44,7 @@ export default class Gallery extends React.Component {
       this.setState({
         resizeTaskId: setTimeout(() => {
           this.getPathToImagesIntoState();
-        }, 100)
+        }, 100),
       });
     });
   };
@@ -56,7 +55,7 @@ export default class Gallery extends React.Component {
     this.setState({
       imagePath: getImagePath(window.innerWidth),
       galleryPath: getGalleryPath(window.innerWidth),
-      resizeTaskId: null
+      resizeTaskId: null,
     });
   };
   componentWillUnmount = () => {
@@ -65,7 +64,7 @@ export default class Gallery extends React.Component {
     document.removeEventListener("touchend", this.touchend);
     window.removeEventListener("resize", this.getPathToImagesIntoState);
   };
-  handleExtend = index => {
+  handleExtend = (index) => {
     this.setState({ extend: true, index });
     document.addEventListener("keydown", this.handleKey);
     document.addEventListener("touchstart", this.touchstart);
@@ -73,12 +72,12 @@ export default class Gallery extends React.Component {
   };
 
   x = 0;
-  touchstart = e => {
+  touchstart = (e) => {
     this.x = e.targetTouches[0].clientX;
     document.addEventListener("touchmove", this.touchmove);
   };
-  touchmove = e => {};
-  touchend = e => {
+  touchmove = (_e) => {};
+  touchend = (e) => {
     if (e.changedTouches[0].clientX - this.x > 60) {
       this.handleLastImage();
     } else if (e.changedTouches[0].clientX - this.x < -60) {
@@ -95,17 +94,17 @@ export default class Gallery extends React.Component {
 
   handleNextImage = () => {
     if (this.state.index < this.props.images.length - 1) {
-      this.setState(state => ({ index: this.state.index + 1 }));
+      this.setState((_state) => ({ index: this.state.index + 1 }));
     }
   };
 
   handleLastImage = () => {
     if (this.state.index > 0) {
-      this.setState(state => ({ index: this.state.index - 1 }));
+      this.setState((_state) => ({ index: this.state.index - 1 }));
     }
   };
 
-  handleKey = e => {
+  handleKey = (e) => {
     if (e.key === "Escape") {
       this.handleCollapse();
     }
@@ -122,18 +121,13 @@ export default class Gallery extends React.Component {
       <div>
         {this.state.extend ? (
           <div className="slideshow-container">
-            <div
-              className="gallery-control-button-container button"
-              onClick={this.handleLastImage}
-            >
+            <div className="gallery-control-button-container button" onClick={this.handleLastImage}>
               <div className="gallery-control-buttons fas fa-angle-double-left" />
             </div>
             <div className="img-container">
               <img
                 className="large"
-                src={`/static/${this.state.imagePath}/${
-                  this.props.images[this.state.index]
-                }`}
+                src={`/static/${this.state.imagePath}/${this.props.images[this.state.index]}`}
               />
               <div id="collapse-button-container">
                 <div
@@ -142,10 +136,7 @@ export default class Gallery extends React.Component {
                 />
               </div>
             </div>
-            <div
-              className="gallery-control-button-container button"
-              onClick={this.handleNextImage}
-            >
+            <div className="gallery-control-button-container button" onClick={this.handleNextImage}>
               <div className="gallery-control-buttons fas fa-angle-double-right" />
             </div>
           </div>

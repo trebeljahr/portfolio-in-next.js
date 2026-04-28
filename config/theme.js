@@ -1,14 +1,13 @@
-import { createMuiTheme } from "@material-ui/core/styles";
-import indigo from "@material-ui/core/colors/indigo";
 import red from "@material-ui/core/colors/red";
+import { createMuiTheme } from "@material-ui/core/styles";
 
 export const theme = createMuiTheme({
   palette: {
     secondary: {
-      main: "#f9dc5c"
+      main: "#f9dc5c",
     },
     primary: {
-      main: "#4CAF50"
+      main: "#4CAF50",
     },
     error: red,
     // Used by `getContrastText()` to maximize the contrast between the background and
@@ -17,17 +16,17 @@ export const theme = createMuiTheme({
     // Used to shift a color's luminance by approximately
     // two indexes within its tonal palette.
     // E.g., shift from Red 500 to Red 300 or Red 700.
-    tonalOffset: 0.2
+    tonalOffset: 0.2,
   },
 
   overrides: {
     MuiPaper: {
       root: {
-        padding: "20px"
-      }
-    }
+        padding: "20px",
+      },
+    },
   },
   typography: {
-    useNextVariants: true
-  }
+    useNextVariants: true,
+  },
 });

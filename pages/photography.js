@@ -1,6 +1,5 @@
-import React, { Component } from "react";
 import fetch from "isomorphic-unfetch";
-import Header from "../components/Headers";
+import { Component } from "react";
 import Gallery from "../components/Gallery";
 import { server } from "../config";
 
@@ -12,7 +11,7 @@ export default class PhotographyPage extends Component {
   }
   componentWillMount() {
     this.setState({
-      images: this.props.images
+      images: this.props.images,
     });
   }
   render() {

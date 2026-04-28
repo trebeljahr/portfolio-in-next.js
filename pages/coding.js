@@ -1,6 +1,5 @@
-import Layout from "../components/Layout";
 import Developer from "../components/Developer";
-import _JSXStyle from "styled-jsx/style";
+import Layout from "../components/Layout";
 
 const Coding = () => (
   <div>

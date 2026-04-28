@@ -1,15 +1,14 @@
-import _JSXStyle from "styled-jsx/style";
 import Paper from "@material-ui/core/Paper";
-import PropTypes from "prop-types";
-import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
+import PropTypes from "prop-types";
+
 const styles = {
   white: {
     width: "80%",
     margin: 10,
     padding: 20,
-    textAlign: "center"
-  }
+    textAlign: "center",
+  },
 };
 const Projects = ({ classes }) => (
   <Paper className={classes.white}>
@@ -23,21 +22,13 @@ const Projects = ({ classes }) => (
           <h2>Curious?</h2>
         </div>
       </a>
-      <a
-        className="size"
-        href="https://tic-tac-toe.ricotrebeljahr.de"
-        target="blank"
-      >
+      <a className="size" href="https://tic-tac-toe.ricotrebeljahr.de" target="blank">
         <div className="tile large" id="tictactoe" />
         <div className="absolute">
           <h2>View me!</h2>
         </div>
       </a>
-      <a
-        className="size"
-        href="https://nrin3141.github.io/Snake-2.0/"
-        target="blank"
-      >
+      <a className="size" href="https://nrin3141.github.io/Snake-2.0/" target="blank">
         <div className="tile large" id="snake" />
         <div className="absolute">
           <h2>Check me out!</h2>
@@ -149,7 +140,7 @@ const Projects = ({ classes }) => (
   </Paper>
 );
 Projects.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(Projects);

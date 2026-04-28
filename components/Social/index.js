@@ -1,33 +1,32 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Head from "../Headers";
-import { withStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
-import _JSXStyle from "styled-jsx/style";
+import { withStyles } from "@material-ui/core/styles";
+import Toolbar from "@material-ui/core/Toolbar";
+import PropTypes from "prop-types";
+import React from "react";
 import { theme } from "../../config/theme.js";
+import Head from "../Headers";
 
 const styles = {
   appBar: {
     background: "rgb(80, 80, 80)",
     position: "relative",
-    zIndex: 3
+    zIndex: 3,
   },
   toolbar: {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "space-around",
     [theme.breakpoints.up("sm")]: {
-      flexDirection: "row"
-    }
+      flexDirection: "row",
+    },
   },
   Button: {
     color: "white",
     padding: 10,
     textDecoration: "none",
-    textTransform: "capitalize"
-  }
+    textTransform: "capitalize",
+  },
 };
 
 class BottomAppBar extends React.Component {
@@ -88,7 +87,7 @@ class BottomAppBar extends React.Component {
 }
 
 BottomAppBar.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(BottomAppBar);

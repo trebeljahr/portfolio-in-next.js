@@ -1,11 +1,10 @@
-import React from "react";
-import App, { Container } from "next/app";
-import { MuiThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import { MuiThemeProvider } from "@material-ui/core/styles";
+import App, { Container } from "next/app";
 import JssProvider from "react-jss/lib/JssProvider";
-import getPageContext from "../config/materialContext";
 import Head from "../components/Headers";
 import Menu from "../components/Menu";
+import getPageContext from "../config/materialContext";
 
 class MyApp extends App {
   constructor() {
@@ -16,7 +15,7 @@ class MyApp extends App {
   componentDidMount() {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector("#jss-server-side");
-    if (jssStyles && jssStyles.parentNode) {
+    if (jssStyles?.parentNode) {
       jssStyles.parentNode.removeChild(jssStyles);
     }
   }

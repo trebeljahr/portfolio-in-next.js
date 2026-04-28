@@ -1,10 +1,9 @@
-import Menu from "../Menu";
 import Head from "../Headers";
-import Social from "../Social";
+import Menu from "../Menu";
 import Parallax from "../Parallax";
-import _JSXStyle from "styled-jsx/style";
+import Social from "../Social";
 
-const Layout = props => (
+const Layout = (props) => (
   <div>
     <Head />
     <Menu />

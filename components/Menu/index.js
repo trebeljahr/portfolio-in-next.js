@@ -1,38 +1,35 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
-import Drawer from "@material-ui/core/Drawer";
 import Button from "@material-ui/core/Button";
+import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import Photography from "@material-ui/icons/PhotoCamera";
-import Home from "@material-ui/icons/Home";
+import { withStyles } from "@material-ui/core/styles";
 import Coding from "@material-ui/icons/Code";
+import Home from "@material-ui/icons/Home";
+import Photography from "@material-ui/icons/PhotoCamera";
 import Contact from "@material-ui/icons/Send";
-
 import Link from "next/link";
-import _JSXStyle from "styled-jsx/style";
+import PropTypes from "prop-types";
+import React from "react";
 
 const styles = {
   list: {
-    width: 250
+    width: 250,
   },
   fullList: {
-    width: "auto"
-  }
+    width: "auto",
+  },
 };
 
 class TemporaryDrawer extends React.Component {
   state = {
-    right: false
+    right: false,
   };
 
   toggleDrawer = (side, open) => () => {
     this.setState({
-      [side]: open
+      [side]: open,
     });
   };
 
@@ -41,12 +38,9 @@ class TemporaryDrawer extends React.Component {
     const sideList = (
       <div className={classes.list}>
         <List>
-          {["Home", "Photography", "Coding", "Contact"].map((text, index) => {
+          {["Home", "Photography", "Coding", "Contact"].map((text, _index) => {
             return (
-              <Link
-                key={text}
-                href={"/" + (text === "Home" ? "" : text.toLowerCase())}
-              >
+              <Link key={text} href={"/" + (text === "Home" ? "" : text.toLowerCase())}>
                 <ListItem button>
                   <ListItemIcon>
                     {text === "Photography" ? (
@@ -90,11 +84,7 @@ class TemporaryDrawer extends React.Component {
             }
           `}</style>
         </div>
-        <Drawer
-          anchor="right"
-          open={this.state.right}
-          onClose={this.toggleDrawer("right", false)}
-        >
+        <Drawer anchor="right" open={this.state.right} onClose={this.toggleDrawer("right", false)}>
           <div
             tabIndex={0}
             role="button"
@@ -110,7 +100,7 @@ class TemporaryDrawer extends React.Component {
 }
 
 TemporaryDrawer.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(TemporaryDrawer);

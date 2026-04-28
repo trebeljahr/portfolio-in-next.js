@@ -1,6 +1,7 @@
-import { SheetsRegistry } from "jss";
 import { createGenerateClassName } from "@material-ui/core/styles";
+import { SheetsRegistry } from "jss";
 import { theme } from "./theme.js";
+
 function createPageContext() {
   return {
     theme,
@@ -9,7 +10,7 @@ function createPageContext() {
     // This is needed in order to inject the critical CSS.
     sheetsRegistry: new SheetsRegistry(),
     // The standard class name generator.
-    generateClassName: createGenerateClassName()
+    generateClassName: createGenerateClassName(),
   };
 }
 

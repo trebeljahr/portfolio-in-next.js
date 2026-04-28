@@ -1,9 +1,6 @@
-import React, { Component } from "react";
-import Headline from "../Headline";
-import Section from "../Section";
-import { server } from "../../config";
+import React from "react";
 import Menu from "../Menu";
-import _JSXStyle from "styled-jsx/style";
+import Section from "../Section";
 
 class Main extends React.Component {
   constructor(props) {
@@ -12,19 +9,17 @@ class Main extends React.Component {
       wait: 0,
       counter: 0,
       headlines: ["Programmer", "Photographer", "Traveler"],
-      hrefs: ["/coding", "/photography", "https://photodyssee.com"]
+      hrefs: ["/coding", "/photography", "https://photodyssee.com"],
     };
   }
   componentDidMount = () => {
     this.setState({
       waitInterval: setInterval(this.changeSection, 5000),
-      interval: setInterval(this.count, 200)
+      interval: setInterval(this.count, 200),
     });
   };
   count = () => {
-    if (
-      this.state.counter === this.state.headlines[this.state.wait % 3].length
-    ) {
+    if (this.state.counter === this.state.headlines[this.state.wait % 3].length) {
       clearInterval(this.state.interval);
     } else {
       this.setState(() => ({ counter: this.state.counter + 1 }));
@@ -34,7 +29,7 @@ class Main extends React.Component {
     this.setState(() => ({
       wait: this.state.wait + 1,
       counter: 0,
-      interval: setInterval(this.count, 200)
+      interval: setInterval(this.count, 200),
     }));
   };
 
@@ -43,17 +38,15 @@ class Main extends React.Component {
     clearInterval(this.state.interval);
   };
   render() {
-    let section = this.state.wait % 3;
-    let headline = this.state.headlines[section];
-    let word = headline.slice(0, this.state.counter);
-    let href = this.state.hrefs[section];
+    const section = this.state.wait % 3;
+    const headline = this.state.headlines[section];
+    const word = headline.slice(0, this.state.counter);
+    const href = this.state.hrefs[section];
     return (
       <div className="wrapper">
         <Menu />
         <Section
-          images={this.state.headlines.map(
-            headline => headline.toLowerCase() + ".jpg"
-          )}
+          images={this.state.headlines.map((headline) => headline.toLowerCase() + ".jpg")}
           img={headline.toLowerCase() + ".jpg"}
           headline={word}
           href={href}
