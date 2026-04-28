@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "packageManager": "pnpm@10.33.2",
+  "engines": {
+    "node": ">=24"
+  },
   "dependencies": {
     "@material-ui/core": "latest",
     "@material-ui/icons": "latest",
@@ -37,7 +40,7 @@
   },
   "devDependencies": {
     "dotenv": "^6.2.0",
-    "@biomejs/biome": "^1.9.4",
+    "@biomejs/biome": "^2.4.13",
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0"
   },
