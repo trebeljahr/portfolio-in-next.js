@@ -58,6 +58,7 @@ export default class Gallery extends React.Component {
       resizeTaskId: null,
     });
   };
+  // biome-ignore lint/suspicious/noDuplicateClassMembers: duplicate by intent (override)
   componentWillUnmount = () => {
     document.removeEventListener("keydown", this.handleKey);
     document.removeEventListener("touchstart", this.touchstart);
