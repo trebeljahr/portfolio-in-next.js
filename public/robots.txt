@@ -1,2 +1,3 @@
+# Archived site: pages use noindex,follow and canonicalize to the current portfolio.
 User-agent: *
 Allow: /
